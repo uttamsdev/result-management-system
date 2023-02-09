@@ -22,9 +22,9 @@ const Result = ({allResults}) => {
     <div>
       <div className="resulting-div">
         <div className="result-heading">
-          <table border={1}>
+          <table className="table1" border={1}>
             <tr>
-              <th colSpan={4}>HSC/Alim/Equivalent Result 2022</th>
+              <th className="table-heading" colSpan={4}>HSC/Alim/Equivalent Result 2022</th>
             </tr>
             <tr>
               <td>Roll No </td>
@@ -56,21 +56,21 @@ const Result = ({allResults}) => {
 
             <tr>
               <td>Result </td>
-              <td>{result}</td>
+              <td className="result-text">{result}</td>
               <td>Institute</td>
               <td>{institute}</td>
             </tr>
 
             <tr>
               <td>GPA</td>
-              <td colSpan={3}>{gpa}</td>
+              <td className="gpa" colSpan={3}>{gpa}</td>
             </tr>
           </table>
         </div>
       </div>
       <h4 className="grade-text">Grade Sheet</h4>
-      <table className="result-table" border={1}>
-        <tr>
+      <table  className="result-table" border={1}>
+        <tr className="table2h">
           <th>Code</th>
           <th>Subject</th>
           <th>Grade</th>
@@ -80,6 +80,7 @@ const Result = ({allResults}) => {
           <ResultData result={result}></ResultData>
         ))}
       </table>
+      <button className="printBtn">PRINT</button>
     </div>
   );
 };

@@ -2,6 +2,7 @@
     {
         "results": [
           { "code": "101", "sub": "ENG", "grade": "A+" },
+          { "code": "102", "sub": "SOC", "grade": "A+" },
           { "code": "102", "sub": "SOC", "grade": "A+" }
         ],
         "reg": "123456789",
