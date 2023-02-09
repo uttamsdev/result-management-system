@@ -3,21 +3,8 @@ import ResultData from "../ResultData/ResultData";
 import "./Result.css";
 
 
-
-// const results = [
-//   {
-//     result: [
-//       { code: "101", sub: "ENG", grade: "A+" },
-//       { code: "102", sub: "SOC", grade: "A+" },
-//     ],
-//     name: "Uttam Saha",
-//     age: 20
-//   },
-// ];
-// console.log(results);
 const Result = ({allResults}) => {
   const {results, reg, roll, name, board, father, group, mother, type, dateOfBirth, result, institute, gpa} = allResults[0];
-  // console.log(roll, name, board, father, mother);
 
   const handlePrint = () => {
     window.print();

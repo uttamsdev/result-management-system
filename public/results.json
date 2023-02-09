@@ -1,21 +1,25 @@
 [
     {
         "results": [
-          { "code": "101", "sub": "ENG", "grade": "A+" },
-          { "code": "102", "sub": "SOC", "grade": "A+" },
-          { "code": "102", "sub": "SOC", "grade": "A+" }
+          { "code": "101", "sub": "BANGLA", "grade": "A+" },
+          { "code": "102", "sub": "ENGLISH I", "grade": "A+" },
+          { "code": "103", "sub": "ENGLISH II", "grade": "A+" },
+          { "code": "104", "sub": "MATH", "grade": "A+" },
+          { "code": "105", "sub": "PHYSICS", "grade": "A+" },
+          { "code": "106", "sub": "BIOLOGY", "grade": "A+" },
+          { "code": "107", "sub": "ICT", "grade": "A+" }
         ],
         "reg": "123456789",
-        "roll": "123451",
-        "name": "Uttam Saha",
-        "board": "Dhaka",
-        "father": "Gones",
-        "group": "Science",
-        "mother": "Mukti",
-        "type": "Regular",
+        "roll": "147852",
+        "name": "UTTAM KUMAR SAHA",
+        "board": "RAJSHAHI",
+        "father": "GONESH CHANDRA SAHA",
+        "group": "SCIENCE",
+        "mother": "MUKTI RANI SAHA",
+        "type": "REGULAR",
         "dateOfBirth": "N/A",
-        "result": "passed",
-        "institute": "Bulbul College",
-        "gpa": 5
+        "result": "PASSED",
+        "institute": "GOVT. BULBUL COLLEGE",
+        "gpa": 100
       }
 ]

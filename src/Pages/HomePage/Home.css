@@ -5,8 +5,6 @@
 * {
   margin: 0;
   padding: 0;
-  /* font-family: myFont; */
-  /* font-weight: 400; */
 }
 body{
     background-color: #EEEEEE;
@@ -260,4 +258,12 @@ span {
 }
 .btnSubmit:hover{
   color: black;
+}
+.archive a{
+  text-decoration: none;
+  font-size: 13px;
+  color: white;
+}
+.archive a:hover{
+  color: blue;
 }

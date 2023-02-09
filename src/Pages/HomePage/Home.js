@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Result from "../ResultPage/Result";
 import "./Home.css";
+import swal from 'sweetalert';
+
 
 let value1 = Math.floor(Math.random() * 10);
 let value2 = Math.floor(Math.random() * 10);
-
-
+let sum = value1 + value2;
 
 
 const Home = () => {
     const [results, setResults] = useState([]);
 
     async function HandleResult(event) {
-        // const [resultx, setResultx] = useState([]); 
         event.preventDefault();
         const exam = event.target.exam.value;
         const year = event.target.year.value;
@@ -20,6 +20,7 @@ const Home = () => {
         const roll = event.target.roll.value;
         const reg = event.target.reg.value;
         const sum = event.target.sum.value;
+        
         console.log(exam, year, board, roll, reg, sum);
         const result = {year, board, roll, reg};
     
@@ -27,7 +28,15 @@ const Home = () => {
         await fetch(`http://localhost:5000/search?${new URLSearchParams(result).toString()}`)
         .then(res => res.json())
         .then(data => setResults(data));
-       
+        if(value1+value2 != sum){
+          swal({
+            title: "WRONG SUM",
+            text: "Please correct the sum",
+            icon: "error",
+            button: "OK",
+          });
+          return;
+        }
     }
 
   return (
@@ -42,12 +51,11 @@ const Home = () => {
               <p>Ministry of Education</p>
               <hr />
               <p className="title">Intermediate and Secondary Education Boards Bangladesh</p>
-              {/* <hr /> */}
               <img src="banner_flag.jpg" alt="" />
             </div>
             <div className="result-archive">
                 <hr />
-                <p>Result Archive</p>
+                <p className="archive"><a href="#">Result Archive</a></p>
             </div>
           </div>
         </div>
@@ -63,16 +71,16 @@ const Home = () => {
                 </select></label> <br />
                 <label htmlFor="">Board <span className="s3">:</span> <select name="board" id="">
                     <option value="">Select One</option>
-                    <option value="Barisal">Barisal</option>
-                    <option value="Chittgong">Chittgong</option>
-                    <option value="Comilla">Comilla</option>
-                    <option value="Dhaka">Dhaka</option>
-                    <option value="Mymensingh">Mymensingh</option>
-                    <option value="Jessore">Jessore</option>
-                    <option value="Rajshahi">Rajshahi</option>
-                    <option value="Sylhet">Sylhet</option>
-                    <option value="Madrasha">Madrasha</option>
-                    <option value="Technical">Technical</option>
+                    <option value="BARISAL">Barisal</option>
+                    <option value="CHITTAGONG">Chittgong</option>
+                    <option value="COMILLA">Comilla</option>
+                    <option value="DHAKA">Dhaka</option>
+                    <option value="MYMENSINGH">Mymensingh</option>
+                    <option value="JESSORE">Jessore</option>
+                    <option value="RAJSHAHI">Rajshahi</option>
+                    <option value="SYLHET">Sylhet</option>
+                    <option value="MADRASHA">Madrasha</option>
+                    <option value="TECHNICAL">Technical</option>
                 </select></label> <br />
                 <label htmlFor="">Roll<span className="s4">:</span> <input name="roll" className="input" type="text" /></label> <br />
                 <label htmlFor="">Reg: No<span className="s5">:</span> <input name="reg" className="input" type="text" /></label> <br />
