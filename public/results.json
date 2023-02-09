@@ -1,0 +1,20 @@
+[
+    {
+        "results": [
+          { "code": "101", "sub": "ENG", "grade": "A+" },
+          { "code": "102", "sub": "SOC", "grade": "A+" }
+        ],
+        "reg": "123456789",
+        "roll": "123451",
+        "name": "Uttam Saha",
+        "board": "Dhaka",
+        "father": "Gones",
+        "group": "Science",
+        "mother": "Mukti",
+        "type": "Regular",
+        "dateOfBirth": "N/A",
+        "result": "passed",
+        "institute": "Bulbul College",
+        "gpa": 5
+      }
+]

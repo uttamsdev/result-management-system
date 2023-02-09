@@ -9,7 +9,7 @@ let value2 = Math.floor(Math.random() * 10);
 const Home = () => {
     const [results, setResults] = useState([]);
     useEffect(()=>{
-        fetch("http://localhost:5000/results")
+        fetch("results.json")
         .then(res => res.json())
         .then(data => setResults(data))
     },[results])
@@ -73,7 +73,7 @@ const Home = () => {
         </div>
 
         {
-                results.length>0 ? <Result></Result> : null
+                results.length>0 ? <Result allResults={results}/> : null
             }
 
         {/* footer */}

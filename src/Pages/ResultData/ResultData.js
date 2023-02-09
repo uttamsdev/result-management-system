@@ -1,7 +1,7 @@
 import React from "react";
 
 const ResultData = (props) => {
-    console.log(props);
+    // console.log(props);
     const {code, sub, grade} = props.result;
   return (
     <tr>

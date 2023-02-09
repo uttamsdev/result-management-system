@@ -2,24 +2,22 @@ import React from "react";
 import ResultData from "../ResultData/ResultData";
 import "./Result.css";
 
-// const results = [
-//     {code: 101, sub: "ENG", grade: "A+"},
-//     {code: 101, sub: "ENG", grade: "A+"},
-//     {code: 101, sub: "ENG", grade: "A++"}
-// ]
 
-const results = [
-  {
-    result: [
-      { code: "101", sub: "ENG", grade: "A+" },
-      { code: "102", sub: "SOC", grade: "A+" },
-    ],
-    name: "Uttam Saha",
-    age: 20
-  },
-];
-console.log(results);
-const Result = () => {
+
+// const results = [
+//   {
+//     result: [
+//       { code: "101", sub: "ENG", grade: "A+" },
+//       { code: "102", sub: "SOC", grade: "A+" },
+//     ],
+//     name: "Uttam Saha",
+//     age: 20
+//   },
+// ];
+// console.log(results);
+const Result = ({allResults}) => {
+  const {results, reg, roll, name, board, father, group, mother, type, dateOfBirth, result, institute, gpa} = allResults[0];
+  console.log(roll, name, board, father, mother);
   return (
     <div>
       <div className="resulting-div">
@@ -30,42 +28,42 @@ const Result = () => {
             </tr>
             <tr>
               <td>Roll No </td>
-              <td>361917</td>
+              <td>{roll}</td>
               <td>Name</td>
-              <td>TAMANNA KHANAM</td>
+              <td>{name}</td>
             </tr>
 
             <tr>
               <td>Board</td>
-              <td>DHAKA</td>
+              <td>{board}</td>
               <td>Father's Name</td>
-              <td>ADEL FAKIR</td>
+              <td>{father}</td>
             </tr>
 
             <tr>
               <td>Group</td>
-              <td>HUMANITIES</td>
+              <td>{group}</td>
               <td>Mother's Name</td>
-              <td>MORJINA BEGUM</td>
+              <td>{mother}</td>
             </tr>
 
             <tr>
               <td>Type</td>
-              <td>REGULAR</td>
+              <td>{type}</td>
               <td>Date of Birth</td>
-              <td>N/A</td>
+              <td>{dateOfBirth}</td>
             </tr>
 
             <tr>
               <td>Result </td>
-              <td>PASSED</td>
+              <td>{result}</td>
               <td>Institute</td>
-              <td>MUKSUDPUR COLLEGE</td>
+              <td>{institute}</td>
             </tr>
 
             <tr>
               <td>GPA</td>
-              <td colSpan={3}>5.00</td>
+              <td colSpan={3}>{gpa}</td>
             </tr>
           </table>
         </div>
@@ -78,7 +76,7 @@ const Result = () => {
           <th>Grade</th>
         </tr>
 
-        {results[0]?.result?.map((result) => (
+        {results?.map((result) => (
           <ResultData result={result}></ResultData>
         ))}
       </table>
