@@ -1,6 +1,10 @@
 import React from "react";
 import "./Home.css";
 
+let value1 = Math.floor(Math.random() * 10);
+let value2 = Math.floor(Math.random() * 10);
+
+
 const Home = () => {
   return (
     <div className="wrapper-div">
@@ -48,7 +52,7 @@ const Home = () => {
                 </select></label> <br />
                 <label htmlFor="">Roll<span className="s4">:</span> <input className="input" type="text" /></label> <br />
                 <label htmlFor="">Reg: No<span className="s5">:</span> <input className="input" type="text" /></label> <br />
-                <label htmlFor="">5+7 <span className="s6">=</span> <input className="input" type="text" /></label> <br />
+                <label htmlFor="">{value1}+{value2} <span className="s6">=</span> <input className="input" type="text" /></label> <br />
                 <div className="btn">
                 <input className="btnReset" type="reset" value="Reset" />
                 <input className="btnSubmit" type="submit" value="Submit" />
