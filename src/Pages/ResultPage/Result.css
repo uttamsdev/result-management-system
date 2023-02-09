@@ -23,7 +23,8 @@ table{
     margin: 0 auto;
     margin-bottom: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
+    font-size: 14px;
+    border-color:#EEEEEE;
 }
 .result-table > tr > td{
     height: 25px;
@@ -41,7 +42,7 @@ table{
     color: #000000;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 30px;
-    font-size: 15px;
+    font-size: 14px;
     padding-left: 4px;
 }
 .result-text, .gpa {

@@ -17,9 +17,13 @@ import "./Result.css";
 // console.log(results);
 const Result = ({allResults}) => {
   const {results, reg, roll, name, board, father, group, mother, type, dateOfBirth, result, institute, gpa} = allResults[0];
-  console.log(roll, name, board, father, mother);
+  // console.log(roll, name, board, father, mother);
+
+  const handlePrint = () => {
+    window.print();
+  }
   return (
-    <div>
+    <div id="result">
       <div className="resulting-div">
         <div className="result-heading">
           <table className="table1" border={1}>
@@ -80,7 +84,7 @@ const Result = ({allResults}) => {
           <ResultData result={result}></ResultData>
         ))}
       </table>
-      <button className="printBtn">PRINT</button>
+      <button onClick={handlePrint} className="printBtn">PRINT</button>
     </div>
   );
 };

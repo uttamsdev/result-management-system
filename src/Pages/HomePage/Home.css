@@ -152,7 +152,7 @@ span {
   margin-left: 67px;
 }
 .s3 {
-  margin-left: 57px;
+  margin-left: 56px;
 }
 .s4 {
   margin-left: 74px;
@@ -254,4 +254,10 @@ span {
 }
 .logo-area > p{
     font-size: 12px;
+}
+.btnReset:hover{
+  color: black;
+}
+.btnSubmit:hover{
+  color: black;
 }

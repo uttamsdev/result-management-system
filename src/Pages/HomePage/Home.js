@@ -6,13 +6,29 @@ let value1 = Math.floor(Math.random() * 10);
 let value2 = Math.floor(Math.random() * 10);
 
 
+
+
 const Home = () => {
     const [results, setResults] = useState([]);
-    useEffect(()=>{
-        fetch("results.json")
+
+    async function HandleResult(event) {
+        // const [resultx, setResultx] = useState([]); 
+        event.preventDefault();
+        const exam = event.target.exam.value;
+        const year = event.target.year.value;
+        const board = event.target.board.value;
+        const roll = event.target.roll.value;
+        const reg = event.target.reg.value;
+        const sum = event.target.sum.value;
+        console.log(exam, year, board, roll, reg, sum);
+        const result = {year, board, roll, reg};
+    
+        
+        await fetch(`http://localhost:5000/search?${new URLSearchParams(result).toString()}`)
         .then(res => res.json())
-        .then(data => setResults(data))
-    },[results])
+        .then(data => setResults(data));
+       
+    }
 
   return (
     <div className="wrapper-div">
@@ -38,14 +54,14 @@ const Home = () => {
 
         <div className="input-wrapper">
         <div className="input-area">
-            <form>
-                <label htmlFor="">Examination<span className="s1">:</span><select name="" id="">
+            <form onSubmit={HandleResult}>
+                <label htmlFor="">Examination<span className="s1">:</span><select name="exam" id="">
                     <option value="HSC/Alim/Equivalent">HSC/Alim/Equivalent</option>
                 </select></label> <br />
-                <label htmlFor="">Year <span className="s2">:</span><select name="" id="">
+                <label htmlFor="">Year <span className="s2">:</span><select name="year" id="">
                     <option value="2022">2022</option>
                 </select></label> <br />
-                <label htmlFor="">Board <span className="s3">:</span> <select name="" id="">
+                <label htmlFor="">Board <span className="s3">:</span> <select name="board" id="">
                     <option value="">Select One</option>
                     <option value="Barisal">Barisal</option>
                     <option value="Chittgong">Chittgong</option>
@@ -58,9 +74,9 @@ const Home = () => {
                     <option value="Madrasha">Madrasha</option>
                     <option value="Technical">Technical</option>
                 </select></label> <br />
-                <label htmlFor="">Roll<span className="s4">:</span> <input className="input" type="text" /></label> <br />
-                <label htmlFor="">Reg: No<span className="s5">:</span> <input className="input" type="text" /></label> <br />
-                <label htmlFor="">{value1}+{value2} <span className="s6">=</span> <input className="input" type="text" /></label> <br />
+                <label htmlFor="">Roll<span className="s4">:</span> <input name="roll" className="input" type="text" /></label> <br />
+                <label htmlFor="">Reg: No<span className="s5">:</span> <input name="reg" className="input" type="text" /></label> <br />
+                <label htmlFor="">{value1}+{value2} <span className="s6">=</span> <input name="sum" className="input" type="text" /></label> <br />
                 <div className="btn">
                 <input className="btnReset" type="reset" value="Reset" />
                 <input className="btnSubmit" type="submit" value="Submit" />

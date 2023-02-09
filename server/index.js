@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const url = require('url');
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -17,11 +18,18 @@ async function run(){
     try{
         await client.connect();
         const resultCollection = client.db("resultdb").collection("result");
-
-        app.get("/results", async(req,res)=> {
-            const query = {};
-            const users = await resultCollection.find(query).toArray();
-            res.send(users);
+        // http://localhost:5000/results/search?year=2022&board=Comilla&roll=361917&reg=1710327364
+        app.get("/search", async(req,res)=> {
+            const year = req.query.year.toString();
+            const board = req.query.board.toString();
+            const roll = req.query.roll.toString();
+            const reg = req.query.reg.toString();
+            // const query = {board: "Dhaka", roll: "123451", reg:"123456789"};
+            const query = {board: board, roll: roll, reg: reg};
+            // console.log(year, board, roll, reg);
+            const result = await resultCollection.find(query).toArray();
+            res.send(result);
+            // console.log(users);
         });
         
     }
