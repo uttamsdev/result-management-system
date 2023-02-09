@@ -77,7 +77,7 @@ const Home = () => {
             }
 
         {/* footer */}
-        {/* <div className="footer">
+        <div className="footer">
             <div className="footer-div"></div>
             <div className="footer-content">
                 <div className="footer-text">
@@ -88,7 +88,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );

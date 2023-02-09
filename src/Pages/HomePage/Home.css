@@ -26,6 +26,7 @@ body{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 10px;
   position: relative;
+  margin-bottom: 15px;
 }
 /* .wrapper-div{
     width: 643px;
@@ -105,6 +106,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 70px;
 }
 .input-wrapper {
   display: flex;
@@ -212,18 +214,24 @@ span {
     width: 626px;
     height: 6px;
     background-color: #86C775;
-    /* margin: 0 auto; */
+    margin: 0 auto;
 }
 .footer{
-    position: absolute;
-    bottom: 6px;
-    left: 10px;
+    /* position: absolute; */
+    /* bottom: 6px; */
+    /* left: 10px; */
+    width: 643px;
+    /* display: flex; */
+    margin: 0 auto;
+    /* margin-top: 70px; */
 }
 .footer-content{
     background-color: #F2F2F2;
     color: #666666;
     border-radius: 0px 0px 10px 10px;
-
+    width: 626px;
+    margin: 0 auto;
+    margin-bottom: 7px;
     /* height: 70px; */
 }
 .footer-text{

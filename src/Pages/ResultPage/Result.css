@@ -6,7 +6,7 @@
     width: 643px;
     display: flex;
     justify-content: center;
-    margin-top: 70px;
+    /* margin-top: 70px; */
 }
 
 table{
@@ -22,6 +22,8 @@ table{
 .result-table{
     margin: 0 auto;
     margin-bottom: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
 }
 .result-table > tr > td{
     height: 25px;
@@ -83,4 +85,5 @@ table{
     cursor: pointer;
     box-sizing: border-box;
     margin-left: 50px;
+    margin-bottom: 20px;
 }
