@@ -19,7 +19,8 @@ body{
 .main-div {
   /* margin: 0 auto; */
   width: 643px;
-  height: 619px;
+  /* height: 619px; */
+  height: auto;
   background-color: #ffffff;
   margin-top: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

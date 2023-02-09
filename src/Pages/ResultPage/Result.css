@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.resulting-div{
+    width: 643px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+table{
+    width: 545px;
+}
+.grade-text{
+    text-align: center;
+    margin-top: 20px;
+}
+.result-table{
+    margin: 0 auto;
+}

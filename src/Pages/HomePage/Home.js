@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Result from "../ResultPage/Result";
 import "./Home.css";
 
 let value1 = Math.floor(Math.random() * 10);
@@ -6,6 +7,13 @@ let value2 = Math.floor(Math.random() * 10);
 
 
 const Home = () => {
+    const [results, setResults] = useState([]);
+    useEffect(()=>{
+        fetch("http://localhost:5000/results")
+        .then(res => res.json())
+        .then(data => setResults(data))
+    },[results])
+
   return (
     <div className="wrapper-div">
       <div className="main-div">
@@ -59,11 +67,17 @@ const Home = () => {
                 </div>
 
             </form>
+           
         </div>
+       
         </div>
 
+        {
+                results.length>0 ? <Result></Result> : null
+            }
+
         {/* footer */}
-        <div className="footer">
+        {/* <div className="footer">
             <div className="footer-div"></div>
             <div className="footer-content">
                 <div className="footer-text">
@@ -74,7 +88,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
