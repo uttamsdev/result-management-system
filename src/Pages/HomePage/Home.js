@@ -53,9 +53,6 @@ const Home = () => {
               icon: "warning",
               button: "OK",
             });
-            setTimeout(()=>{
-              window.location.reload();
-            },15000)
             
             return;
           } else{
