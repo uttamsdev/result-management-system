@@ -11,6 +11,7 @@ let sum = value1 + value2;
 
 const Home = () => {
     const [results, setResults] = useState([]);
+    const initialState = [{}];
 
     async function HandleResult(event) {
         event.preventDefault();
@@ -20,14 +21,15 @@ const Home = () => {
         const roll = event.target.roll.value;
         const reg = event.target.reg.value;
         const sum = event.target.sum.value;
-        
-        console.log(exam, year, board, roll, reg, sum);
-        const result = {year, board, roll, reg};
-    
-        
-        await fetch(`http://localhost:5000/search?${new URLSearchParams(result).toString()}`)
-        .then(res => res.json())
-        .then(data => setResults(data));
+        if(!exam || !year || !board || !roll || !reg || !sum){
+          swal({
+            title: "Input filed empty",
+            text: "Please enter all input field",
+            icon: "warning",
+            button: "OK",
+          });
+          return;
+        }
         if(value1+value2 != sum){
           swal({
             title: "WRONG SUM",
@@ -37,6 +39,25 @@ const Home = () => {
           });
           return;
         }
+        
+        console.log(exam, year, board, roll, reg, sum);
+        const result = {year, board, roll, reg};
+    
+        
+        await fetch(`https://result-bd-server-f874a3a88c05.herokuapp.com/search?${new URLSearchParams(result).toString()}`)
+        .then(res => res.json())
+        .then(data => {
+          if(data.length==0){
+            alert("No result found");
+            window.location.reload();
+            // setResults(initialState);
+            // setResults([{}]);
+            
+            return;
+          } else{
+            setResults(data);
+          }
+        });
     }
 
   return (
