@@ -11,7 +11,6 @@ let sum = value1 + value2;
 
 const Home = () => {
     const [results, setResults] = useState([]);
-    const initialState = [{}];
 
     async function HandleResult(event) {
         event.preventDefault();
@@ -34,7 +33,7 @@ const Home = () => {
           swal({
             title: "WRONG SUM",
             text: "Please correct the sum",
-            icon: "error",
+            icon: "warning",
             button: "OK",
           });
           return;
@@ -48,10 +47,13 @@ const Home = () => {
         .then(res => res.json())
         .then(data => {
           if(data.length==0){
-            alert("No result found");
+            swal({
+              title: "No Result Found",
+              text: "Enter the correct details",
+              icon: "warning",
+              button: "OK",
+            });
             window.location.reload();
-            // setResults(initialState);
-            // setResults([{}]);
             
             return;
           } else{
