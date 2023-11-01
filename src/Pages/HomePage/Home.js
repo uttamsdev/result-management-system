@@ -31,7 +31,7 @@ const Home = () => {
         }
         if(value1+value2 != sum){
           swal({
-            title: "WRONG SUM",
+            title: "Wrong Sum",
             text: "Please correct the sum",
             icon: "warning",
             button: "OK",
