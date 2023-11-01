@@ -43,7 +43,7 @@ const Home = () => {
         const result = {year, board, roll, reg};
     
         
-        await fetch(`https://result-bd-server-f874a3a88c05.herokuapp.com/search?${new URLSearchParams(result).toString()}`)
+        await fetch(`https://resultbd.azurewebsites.net/search?${new URLSearchParams(result).toString()}`)
         .then(res => res.json())
         .then(data => {
           if(data.length==0){
